@@ -1,6 +1,5 @@
 'use strict';
 
-// Selecting elements
 const player0El = document.querySelector('.player--0');
 const player1El = document.querySelector('.player--1');
 const score0El = document.querySelector('#score--0');
@@ -14,8 +13,6 @@ const btnRoll = document.querySelector('.btn--roll');
 const btnHold = document.querySelector('.btn--hold');
 
 let scores, currentScore, activePlayer, playing;
-
-// Starting conditions
 const init = function () {
   scores = [0, 0];
   currentScore = 0;
@@ -43,13 +40,10 @@ const switchPlayer = function () {
   player1El.classList.toggle('player--active');
 };
 
-// Rolling dice functionality
 btnRoll.addEventListener('click', function () {
   if (playing) {
-    // 1. Generating a random dice roll
     const dice = Math.trunc(Math.random() * 6) + 1;
 
-    // 2. Display dice
     diceEl.classList.remove('hidden');
     diceEl.src = `dice-${dice}.png`;
 
